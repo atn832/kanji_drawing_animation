@@ -11,7 +11,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  plugin_platform_interface: ^2.0.2
   svg_drawing_animation: ^0.10.2
 
 dev_dependencies:
