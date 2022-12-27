@@ -1,6 +1,8 @@
 # kanji_drawing_animation
 
-A Widget that draws Kanji with the right stroke order. The kanji stroke order data comes from <https://github.com/KanjiVG/kanjivg>.
+[![pub package](https://img.shields.io/pub/v/kanji_drawing_animation.svg)](https://pub.dartlang.org/packages/kanji_drawing_animation)
+
+A widget that draws Kanji with the right stroke order. The kanji stroke order data comes from <https://github.com/KanjiVG/kanjivg>.
 
 ## Features
 
