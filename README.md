@@ -4,6 +4,10 @@
 
 A widget that draws Kanji with the right stroke order. The kanji stroke order data comes from <https://github.com/KanjiVG/kanjivg>.
 
+
+<img src="https://github.com/atn832/kanji_drawing_animation/raw/main/kanji_drawing_animation.gif" width="360" />
+
+
 ## Features
 
 - Draws Kanji.

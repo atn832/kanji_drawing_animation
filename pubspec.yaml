@@ -1,6 +1,6 @@
 name: kanji_drawing_animation
 description: A widget that draws Kanji with the right stroke order based on KanjiVG.
-version: 0.5.0
+version: 0.5.0+1
 repository: https://github.com/atn832/kanji_drawing_animation
 homepage: https://www.wafrat.com
 
