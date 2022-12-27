@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:svg_drawing_animation/svg_drawing_animation.dart';
 
 class KanjiDrawingAnimation extends StatelessWidget {
-  const KanjiDrawingAnimation(this.kanji, {super.key});
+  const KanjiDrawingAnimation(this.kanji,
+      {this.speed = 80, this.curve = Curves.decelerate, super.key})
+      : assert(kanji.length == 1);
 
   final String kanji;
-  static final Map<String, SvgProvider> kanjiToProvider = {};
+  final double speed;
+  final Curve curve;
+
+  // Network cache.
+  static final Map<String, SvgProvider> _kanjiToProvider = {};
 
   @override
   Widget build(BuildContext context) {
@@ -13,18 +19,19 @@ class KanjiDrawingAnimation extends StatelessWidget {
     final url =
         'https://raw.githubusercontent.com/KanjiVG/kanjivg/master/kanji/$filename.svg';
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    if (!kanjiToProvider.containsKey(kanji)) {
-      kanjiToProvider[kanji] = SvgProvider.network(url);
+    if (!_kanjiToProvider.containsKey(kanji)) {
+      _kanjiToProvider[kanji] = SvgProvider.network(url);
     }
     return Container(
+        // Make the background light even in dark mode.
         color: isDark
             ? Theme.of(context).colorScheme.inverseSurface
             : Theme.of(context).colorScheme.surface,
         child: SvgDrawingAnimation(
-          kanjiToProvider[kanji]!,
+          _kanjiToProvider[kanji]!,
           repeats: true,
-          duration: const Duration(seconds: 3),
-          curve: Curves.decelerate,
+          speed: speed,
+          curve: curve,
           errorWidgetBuilder: (context, error, stackTrace) =>
               const Text('No kanji stroke information'),
           penRenderer: CirclePenRenderer(

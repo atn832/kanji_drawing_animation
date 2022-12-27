@@ -12,12 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-            appBar: AppBar(
-              title: const Text('Kanji Drawing Demo'),
-            ),
+            appBar: AppBar(title: const Text('Kanji Drawing Demo')),
             body: Column(children: '人食電繁'.split('').map(wrap).toList())));
   }
 }
 
+// Wraps an animated kanji into a card with fixed height.
 Widget wrap(String kanji) =>
     Card(child: SizedBox(height: 100, child: KanjiDrawingAnimation(kanji)));

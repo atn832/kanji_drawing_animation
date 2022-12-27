@@ -1,17 +1,18 @@
 name: kanji_drawing_animation
-description: A new Flutter plugin project.
-version: 0.0.1
-homepage:
+description: A Widget that draws Kanji with the right stroke order based on KanjiVG.
+version: 0.5.0
+repository: https://github.com/atn832/kanji_drawing_animation
+homepage: https://www.wafrat.com
 
 environment:
-  sdk: '>=2.19.0-444.2.beta <3.0.0'
+  sdk: '>=2.18.6 <3.0.0'
   flutter: ">=2.5.0"
 
 dependencies:
   flutter:
     sdk: flutter
   plugin_platform_interface: ^2.0.2
-  svg_drawing_animation: ^0.10.1+1
+  svg_drawing_animation: ^0.10.2
 
 dev_dependencies:
   flutter_test:
